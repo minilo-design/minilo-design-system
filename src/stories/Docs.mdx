@@ -1,0 +1,1192 @@
+# Minilo Design System Documentation
+
+[v1.minilo.io](http://v1.minilo.io/)
+
+## Vision
+
+Our vision is to **redefine the bridge between design and development** by creating a **streamlined, niche design system** that eliminates inefficiencies, reduces friction, and accelerates the journey from **concept to code**.
+
+## **Purpose Statement**
+
+The purpose of this design system is to:
+
+1. **Standardize Design Patterns:** Ensure consistency across all UI components.
+2. **Accelerate Development:** Reduce repetitive tasks with pre-built, reusable components.
+3. **Enhance Collaboration:** Enable seamless communication between designers and developers.
+4. **Minimize Ambiguity:** Provide clear documentation and usage guidelines.
+5. **Focus on Niche Design Needs:** Address specific design challenges unique to our targeted audience.
+
+## **Core Goals**
+
+1. **Efficiency:** Reduce the design-to-development cycle time by providing ready-to-use assets and components.
+2. **Scalability:** Create a modular system with small and large projects.
+3. **Accessibility:** Ensure all components follow accessibility best practices (e.g., WCAG).
+4. **Consistency:** Maintain a unified design language across platforms and devices.
+5. **Innovation:** Continuously evolve based on user feedback and industry trends.
+
+## **Core Principles**
+
+- **Minimalism:** Simple yet functional design components.
+- **Accessibility:** Inclusive and user-friendly designs.
+- **Responsiveness:** Adapt seamlessly across devices.
+- **Customizability:** Flexible components tailored to unique requirements.
+- **Transparency:** Clear documentation and open-source contributions.
+
+## **Value Proposition**
+
+- **For Designers:** A consistent design library that reduces guesswork and promotes creativity.
+- **For Developers:** Clean, reusable components with clear documentation and examples.
+- **For Businesses:** Faster time-to-market and reduced development costs.
+
+---
+
+## Design Principles
+
+1. **Border Radius**: Use a fixed border-radius of 8px or 8% of the rectangle size, whichever is more consistent with the design.
+2. **Border Color**: All borders should have a fixed color: `#E9E9E9`.
+3. **Container Background**: The background color of all containers should be white for a clean and minimalistic look.
+4. **Text Styling**: Titles or text inside containers or buttons should always be bold to ensure clarity and emphasis.
+5. **Layout Background**: The layout background color should be `#FDFCFF` to maintain a consistent, soft aesthetic.
+6. All components follow a unified visual language.
+7. The framework can adapt to new features easily.
+8. WCAG-compliant components.
+
+---
+
+## Design System Foundation
+
+### Color Palette
+
+**1. Primary Colors**
+
+- **Light Mode**:
+  - Primary: `#FFFFFF` (Pure White)
+- **Dark Mode**:
+  - Primary: `#000000` (Pure Black)
+
+**2. Neutral Shades**
+
+To support the primary colors for borders, backgrounds, and subtle variations.
+
+- **Light Mode**:
+  - Neutral 1: `#FDFCFF` (Soft White for Layout Background)
+  - Neutral 2: `#E9E9E9` (Light Gray for Borders)
+  - Text: `#333333` (Dark Gray)
+- **Dark Mode**:
+  - Neutral 1: `#181818` (Deep Black for Layout Background)
+  - Neutral 2: `#3A3A3A` (Dark Gray for Borders)
+  - Text: `#FFFFFF` (Pure White)
+
+### Typography
+
+[typography-system-responsive.css](Minilo%20Documentation%2014717d5eeee180c28ecfd1b19eea3c5d/typography-system-responsive.css)
+
+1. Font family:
+   - Noto Sans is the default
+   - Fallback to sans serif
+2. Mobile Font Sizes (scaled down from desktop):
+   - H1: 28px (was 32px)
+   - H2: 22px (was 24px)
+   - H3: 18px (was 20px)
+   - H4: 16px (was 18px)
+   - H5: 14px (was 16px)
+   - H6: 12px (was 14px)
+   - Small: 11px (was 12px)
+3. Mobile Line Heights:
+   - Proportionally reduced to maintain readability
+   - Maintains comfortable reading experience on smaller screens
+4. Features:
+   - CSS variables for both mobile and desktop sizes
+   - Responsive breakpoint at 768px
+   - Maintained weight classes
+   - Clean, simplified structure
+   - Zero-letter spacing maintained
+
+To use this system:
+
+1. Import Noto sans font
+2. Include this CSS in your project
+3. Styles will automatically adjust based on screen size
+4. Use either semantic tags (h1-h6) or utility classes (.h1-.h6)
+5. Add weight classes as needed (e.g., `class="h1 bold"`)
+
+### Spacing & Layout Guidelines
+
+**1. Grid System**
+
+- **Base Spacing Unit**: 8px
+  - This will act as the fundamental unit of spacing in your design system. All spacing (margins, padding, etc.) will be based on multiples of this unit (e.g., 8px, 16px, 24px).
+  - **Consistency**: Using a consistent spacing unit will ensure a visually balanced and harmonious layout across different platforms and devices.
+
+**2. Responsive Layout & Breakpoints**
+
+A responsive layout ensures that your design adapts seamlessly across various screen sizes. Here's a breakdown of the breakpoints:
+
+- **Extra Small (Mobile Portrait)**: `max-width: 480px`
+  - This is for small mobile devices, with the design adjusted for smaller screens.
+  - Adjustments: Single-column layouts, larger touch targets.
+- **Small (Mobile Landscape / Tablets)**: `min-width: 481px` and `max-width: 768px`
+  - This is for medium-sized devices like tablets and landscape mobile screens.
+  - Adjustments: Consider adding more space for touch elements and flexible grid usage.
+- **Medium (Tablets / Small Laptops)**: `min-width: 769px` and `max-width: 1024px`
+  - For tablets and smaller laptop screens.
+  - Adjustments: Two-column layouts or larger typography for better readability.
+- **Large (Desktop / Large Laptops)**: `min-width: 1025px` and `max-width: 1440px`
+  - For typical desktop screen sizes.
+  - Adjustments: Grid systems for multi-column layouts, fixed-width containers, and more complex content areas.
+- **Extra Large (Wide Screens)**: `min-width: 1441px`
+  - For larger desktops and wide screens.
+  - Adjustments: Maximize content width, and use flexible grids to ensure content remains balanced.
+
+**3. Layout Grid**
+
+- **Columns**:
+  - **Mobile**: 1 column
+  - **Tablet**: 2 columns
+  - **Desktop**: 12 columns (with a flexible gutter for spacing between columns)
+- **Gutters**:
+  - **Mobile and Tablet**: 16px (for tighter layouts on smaller screens)
+  - **Desktop**: 24px (wider gutters for larger screens)
+
+**4. Margins & Padding**
+
+- **Container Padding**:
+  - **Mobile**: 16px
+  - **Tablet & Desktop**: 24px
+- **Outer Margin**:
+  - **Mobile**: 8px
+  - **Tablet & Desktop**: 16px
+
+**5. Typography**
+
+- **Line Height**: 1.4x the font size for readability.
+- **Text Spacing**: Use the base spacing unit (8px) for consistent spacing between text elements like paragraphs and headings.
+  ***
+
+## Design Tokens
+
+### **Design Tokens**
+
+Design tokens are a set of variables that define the visual design aspects of your system. These tokens allow you to consistently apply styles across different platforms and devices while making it easier to manage and update your design system. Below are examples of how to define your design tokens:
+
+### **1. Colors**
+
+Colors define the primary visual elements of your design.
+
+- **Primary Color**:
+  - `color-primary: #FFFFFF` (Light mode - White)
+  - `color-primary-dark: #000000` (Dark mode - Black)
+- **Secondary Color**:
+  - `color-secondary: #0061A8` (Blue for accents, buttons)
+  - `color-secondary-light: #B3D7F2` (Light Blue for hover states or secondary buttons)
+- **Neutral Color**:
+  - `color-neutral-1: #FDFCFF` (Soft background color for layouts)
+  - `color-neutral-2: #E9E9E9` (Border and divider color)
+  - `color-text-primary: #333333` (Primary text color)
+  - `color-text-secondary: #999999` (Secondary text color for less emphasized elements)
+- **Accent Color**:
+  - `color-accent: #E63946` (Red for alerts, warnings, or badges)
+  - `color-accent-light: #FFD3D5` (Light red for hover or focus states)
+
+### **2. Typography**
+
+Typography defines the font properties like size, weight, and line height. These tokens allow consistent text styling across all elements.
+
+- **Font Sizes**:
+  - `font-size-xs: 12px` (Small text, such as captions)
+  - `font-size-sm: 14px` (Body text)
+  - `font-size-md: 16px` (Regular text or titles)
+  - `font-size-lg: 20px` (Headings or larger text)
+  - `font-size-xl: 24px` (Main headings, larger titles)
+- **Font Weights**:
+  - `font-weight-regular: 400` (Normal weight for body text)
+  - `font-weight-bold: 700` (Bold weight for headings or important text)
+- **Line Heights**:
+  - `line-height-xs: 1.2` (Tighter line height for small text)
+  - `line-height-sm: 1.4` (Default line height for body text)
+  - `line-height-md: 1.5` (For larger text or headings)
+
+### **3. Spacing**
+
+Spacing defines the margins, padding, and gaps between elements in your design.
+
+- **Small Spacing**:
+  - `spacing-xs: 4px` (Small margins/padding for tightly packed elements)
+- **Medium Spacing**:
+  - `spacing-sm: 8px` (Standard space between elements, such as icons and text)
+  - `spacing-md: 16px` (Padding for containers or large gaps between sections)
+- **Large Spacing**:
+  - `spacing-lg: 24px` (Wide margins or padding for larger elements or sections)
+  - `spacing-xl: 32px` (Spacing for very large containers or page sections)
+
+### **4. Border Radius**
+
+Defines the rounding of the edges of UI elements.
+
+- `border-radius-sm: 4px` (Slightly rounded corners for small elements)
+- `border-radius-md: 8px` (Standard rounded corners for most elements)
+- `border-radius-lg: 16px` (Large rounded corners for prominent elements)
+
+### **5. Shadows**
+
+Defines the depth effect of elements, although your framework might avoid shadows based on your initial request.
+
+- `shadow-none: none` (No shadow, to maintain minimalism)
+- `shadow-sm: 0px 1px 2px rgba(0, 0, 0, 0.1)` (Very light shadow for subtle depth)
+- `shadow-md: 0px 2px 4px rgba(0, 0, 0, 0.2)` (Moderate shadow for noticeable depth)
+
+---
+
+## Atomic Components
+
+**Loading State (with Shimmer Loading)**
+
+In modern UIs, loading states are crucial for providing visual feedback while content is being loaded. One of the popular loading states is the **Shimmer Loading Effect**, which mimics a wave of light over content to indicate that the content is loading.
+
+**Shimmer Loading:**
+
+- **Shimmer Effect**: A continuous animation that creates the illusion of light sweeping across elements to indicate loading.
+- **Default Loading State**: An animated shimmer effect over components like buttons, text, or cards, giving users the impression that content is loading.
+
+**1. Buttons – Loading State**
+
+Incorporating a loading state for buttons is essential when an action is processing (e.g., form submission).
+
+- **Loading State**:
+  - `background-color: #E0E0E0;` (Light gray background to indicate the button is disabled)
+  - `color: transparent;` (Hide text or icon to prevent interaction)
+  - `border: 1px solid #BDBDBD;` (Subtle border color)
+  - **Shimmer Animation**:
+    - Apply a shimmer animation to the button’s background to indicate activity.
+    - Example:
+      ```css
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
+        }
+        100% {
+          background-position: 1000px 0;
+        }
+      }
+      .button-loading {
+        animation: shimmer 2s infinite linear;
+        background: linear-gradient(
+          90deg,
+          #f0f0f0 25%,
+          #e0e0e0 50%,
+          #f0f0f0 75%
+        );
+        background-size: 200% 100%;
+        position: relative;
+      }
+      ```
+
+**2. Inputs – Loading State**
+
+Inputs can show a loading state, especially in forms or search bars that require fetching results from an API.
+
+- **Loading State**:
+  - `background-color: #F0F0F0;` (Subtle background color)
+  - `border-color: #BDBDBD;` (Gray border)
+  - **Shimmer Animation**:
+    ```css
+    .input-loading {
+      animation: shimmer 1.5s infinite linear;
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      position: relative;
+    }
+    ```
+
+**3. Cards / Containers – Loading State**
+
+For content-heavy pages or cards, a loading state with the shimmer effect is useful.
+
+- **Loading State**:
+  - `background-color: #F0F0F0;` (Light background to simulate an empty state)
+  - **Shimmer Animation**:
+    ```css
+    .card-loading {
+      animation: shimmer 2s infinite linear;
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      position: relative;
+      height: 150px; /* or height of the card */
+      border-radius: border-radius-md;
+    }
+    ```
+
+**4. General Shimmer Animation**
+
+Here’s the CSS code for creating the shimmer effect that can be applied to any loading state component:
+
+```css
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer-loading {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  position: relative;
+}
+```
+
+**5. Loading State in Atomic Components**
+
+- **Buttons**:
+  - **Normal**: Default button with text.
+  - **Loading**: Display shimmer animation in place of text and change the button to show it’s in progress.
+- **Inputs**:
+  - **Normal**: Regular text input.
+  - **Loading**: Display the shimmer effect on the input field as the content is being processed or fetched.
+- **Cards / Containers**:
+  - **Normal**: Display content (e.g., images, text).
+  - **Loading**: Use shimmer animation to show a placeholder content area while data is being fetched.
+
+**Best Practices for Implementing Loading State**
+
+- **Visibility**: Always ensure the loading state is clearly visible to the user (the shimmer effect should be prominent enough to be noticed).
+- **Duration**: Keep loading times to a minimum to avoid frustrating users. Use loading indicators only when necessary (e.g., when waiting for API calls or data fetching).
+- **Fallback**: For long-loading operations, consider adding a text label like "Loading..." or an icon to let users know what is happening.
+
+---
+
+### **Progress to Molecules and Organisms**
+
+After you've established your **atomic components**, the next step is to combine these atoms into more complex structures called **molecules** and **organisms**. These elements are higher-level components that allow you to build more complex UI elements with reusable pieces from your atomic components.
+
+**1. Molecules**
+
+Molecules are combinations of two or more atomic components that work together as a unit but are still relatively simple. These elements are reusable across your design and are essential building blocks for creating organisms.
+
+**1.1. Card Component (Molecule)**
+
+A **card** is a commonly used UI element that typically contains a heading, image, body text, and action buttons. Cards can be created by combining atoms like buttons, text, and images.
+
+**Structure of Card Component**:
+
+- **Card Container**:
+  - `background-color: color-neutral-1;`
+  - `border-radius: border-radius-md;`
+  - `box-shadow: none;` (to keep the design minimal)
+  - `padding: spacing-md;`
+- **Card Image**:
+  - `width: 100%;`
+  - `height: auto;`
+  - `border-radius: border-radius-sm;`
+- **Card Text**:
+  - `font-size: font-size-sm;`
+  - `color: color-text-primary;`
+- **Card Button**:
+  - Combine the button atomic component (with the default button styles).
+  - Add a **loading state** as defined earlier when content is being loaded in the card.
+
+**Card Component Example**:
+
+```html
+<div class="card">
+  <!-- Ellipse -->
+  <div class="ellipse"></div>
+
+  <!-- Headline -->
+  <h3 class="card-headline">Headline</h3>
+
+  <!-- Supporting Text -->
+  <p class="card-supporting-text">
+    Some supporting text goes here to describe the card.
+  </p>
+
+  <!-- Apply Now Button -->
+  <button class="apply-now">Text Button</button>
+</div>
+```
+
+Card CSS:
+
+```css
+body {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.card {
+  position: relative;
+  width: 194px;
+  height: 182px;
+  background: #ffffff;
+  border: 1px solid #e9e9e9;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.ellipse {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 48, 120, 0.05);
+  border: 1px solid #003078;
+  border-radius: 50%;
+  top: 16px;
+  left: 12px;
+}
+
+.icon {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 16px;
+  left: 12px;
+  background: #e9e9e9;
+  border-radius: 50%;
+}
+
+.card-headline {
+  position: absolute;
+  top: 62px;
+  left: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333333;
+  line-height: 24px;
+}
+
+.card-supporting-text {
+  position: absolute;
+  top: 94px;
+  left: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #666666;
+  line-height: 18px;
+}
+
+.apply-now {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #85994b;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+```
+
+**1.2. Input Group (Molecule)**
+
+An **input group** combines a text input with additional elements like buttons, icons, or labels. Input groups are useful when there are multiple related actions, such as a search bar with a button or an input with a validation message.
+
+**Structure of Input Group**:
+
+- **Input Field**: Atomic input component.
+- **Button/Icon**: Atomic button or icon component (e.g., a search icon button inside the input field).
+
+**Input Group Example**:
+
+```html
+<div class="input-field">
+  <input type="text" placeholder="Enter text here" />
+</div>
+```
+
+Input CSS:
+
+```css
+/* Input Field Styling */
+.input-field {
+  box-sizing: border-box; /* Ensures padding is included in the element's total width/height */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 16px;
+  gap: 12px;
+  isolation: isolate;
+
+  /* Positioning */
+  position: absolute;
+  width: 343px;
+  height: 52px;
+  left: 20px;
+  top: 226px;
+
+  /* Background and border */
+  background: #fffefe; /* Light background */
+  border: 1px solid #003078; /* Blue border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Input Field Text */
+.input-field input {
+  width: 100%; /* Makes input field take up the full width */
+  border: none; /* Removes the default border */
+  outline: none; /* Removes the outline */
+  font-size: 16px; /* Adjust text size */
+  color: #000; /* Text color */
+}
+```
+
+**1.3. Modal (Molecule)**
+
+A **modal** is a common UI pattern used for displaying content over the current page. It’s typically composed of a header, body content, and actions like buttons.
+
+**Structure of Modal**:
+
+- **Modal Background**: A semi-transparent background that blurs or darkens the content behind it.
+- **Modal Content**: Contains the main content of the modal (text, forms, etc.).
+- **Modal Actions**: Buttons are used to close or confirm the modal’s action (use the button atomic component for actions).
+
+**Modal Example**:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Example</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Button to trigger modal -->
+    <button class="open-modal-btn">Open Modal</button>
+
+    <!-- Modal Overlay and Modal Content -->
+    <div class="modal-overlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h2 class="modal-title">Modal Title</h2>
+        </div>
+        <div class="modal-body">
+          <p>Some content or form goes here...</p>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn-close">Close</button>
+          <button class="modal-btn-confirm">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+```
+
+Modal CSS:
+
+```css
+/* Basic styling for the body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Button to open modal */
+.open-modal-btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #000000; /* Changed to black */
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.open-modal-btn:hover {
+  background-color: #333333; /* Darker shade of black for hover */
+}
+
+/* Modal Overlay (background behind the modal) */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal box */
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Header */
+.modal-header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Modal Body */
+.modal-body {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Buttons inside modal */
+.modal-btn-close,
+.modal-btn-confirm {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.modal-btn-close {
+  background-color: #ffffff; /* Changed to white */
+  color: #000000; /* Changed text color to black */
+  border: 1px solid #000000; /* Add a black border */
+}
+
+.modal-btn-close:hover {
+  background-color: #f1f1f1; /* Lighter shade for hover */
+}
+
+.modal-btn-confirm {
+  background-color: #000000; /* Changed to black */
+  color: white;
+}
+
+.modal-btn-confirm:hover {
+  background-color: #333333; /* Darker shade of black for hover */
+}
+```
+
+Modal js:
+
+```css
+// Get modal elements
+const modalOverlay = document.querySelector('.modal-overlay');
+const openModalBtn = document.querySelector('.open-modal-btn');
+const closeModalBtn = document.querySelector('.modal-btn-close');
+
+// Open modal when button is clicked
+openModalBtn.addEventListener('click', () => {
+    modalOverlay.style.display = 'flex'; // Show the modal
+});
+
+// Close modal when close button is clicked
+closeModalBtn.addEventListener('click', () => {
+    modalOverlay.style.display = 'none'; // Hide the modal
+});
+
+// Close modal if clicked outside the modal box
+window.addEventListener('click', (event) => {
+    if (event.target === modalOverlay) {
+        modalOverlay.style.display = 'none'; // Hide the modal
+    }
+});
+```
+
+**2. Organisms**
+
+Organisms are more complex UI components that are made up of multiple molecules and atoms. They represent larger sections or groups of content that perform specific functions on the page. Organisms are typically used to build out entire layouts or functional areas like navigation bars, footers, and headers.
+
+**2.1. Navigation Bar (Organism)**
+
+A **navigation bar** (or **navbar**) is typically located at the top of the page and provides links to the main sections of the site or app. It can contain a combination of logos, links, dropdowns, and user action buttons.
+
+**Structure of Navigation Bar**:
+
+- **Logo**: Typically a logo or brand name.
+- **Nav Links**: Links to different sections (e.g., Home, About, Services).
+- **Search Bar**: A combined input group that allows users to search.
+- **User Actions**: Buttons for login, profile, or notifications.
+
+**Navigation Bar Example**:
+
+```html
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- Logo Section -->
+    <div class="navbar-logo">
+      <img
+        src="https://via.placeholder.com/28"
+        alt="Logo"
+        class="navbar-logo-img"
+      />
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="navbar-links">
+      <a href="#" class="nav-link selected">Home</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Services</a>
+      <a href="#" class="nav-link">Contact</a>
+    </div>
+  </div>
+</nav>
+```
+
+Navbar css:
+
+```css
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 16px 0;
+  border-bottom: 1px solid #e9e9e9; /* Divider under navbar */
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Max width to avoid stretching on larger screens */
+  padding: 0 20px;
+}
+
+.navbar-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  padding: 0px 10px 0px 10px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+.nav-link.selected {
+  color: black;
+  border-bottom: 2px solid black; /* Underline effect for selected link */
+}
+
+.nav-link:hover {
+  color: #383f43;
+}
+```
+
+**2.2. Footer (Organism)**
+
+A **footer** is typically at the bottom of a page and contains information like contact details, links to policies, and other site navigation options.
+
+**Structure of Footer**:
+
+- **Footer Links**: Links to key sections (e.g., Privacy Policy, Terms of Service).
+- **Social Media Links**: Icons linking to social media profiles.
+- **Copyright**: Text displaying copyright information.
+
+**Footer Example**:
+
+```html
+<footer class="footer">
+  <div class="footer-content">
+    <!-- Logo/Image (Avatar) -->
+    <div class="footer-avatar"></div>
+
+    <div class="footer-text-1">Title</div>
+    <div class="footer-text-2">Subtitle</div>
+    <div class="footer-text-3">Body</div>
+  </div>
+</footer>
+```
+
+Footer CSS:
+
+```css
+/* Footer Styles */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 0px;
+  gap: 16px;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: 0;
+  background: #ebecec;
+}
+
+/* Footer content layout */
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Avatar Logo Styling */
+.footer-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #383f43; /* Dark border for visibility */
+}
+
+/* Footer text styles */
+.footer-text-1,
+.footer-text-2,
+.footer-text-3 {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  color: #383f43;
+}
+
+.footer-text-1 {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.footer-text-2 {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.footer-text-3 {
+  font-size: 12px;
+  line-height: 24px;
+}
+```
+
+**2.3. Header (Organism)**
+
+A **header** contains all the elements typically found at the top of a page, like a logo, navigation, and sometimes a search bar or call-to-action buttons.
+
+**Structure of Header**:
+
+- **Logo**: A brand or company logo.
+- **Navigation Links**: Links to the most important sections.
+- **Actions**: Buttons for user authentication, notifications, or account settings.
+
+**Header Example**:
+
+```html
+<header class="header">
+  <div class="line"></div>
+
+  <!-- Logo Section -->
+  <div class="logo">
+    <div class="avatar"></div>
+    <div class="title">Title</div>
+  </div>
+
+  <!-- Tabs Section -->
+  <nav class="tabs">
+    <a href="#" class="tab selected">Home</a>
+    <a href="#" class="tab">About</a>
+    <a href="#" class="tab">Services</a>
+    <a href="#" class="tab">Contact</a>
+  </nav>
+
+  <!-- Search Section -->
+  <div class="search-section">
+    <input type="text" class="search-input" placeholder="Search..." />
+    <div class="search-icon">
+      <!-- Optional search icon could be placed here -->
+    </div>
+  </div>
+
+  <!-- Profile Section -->
+  <div class="profile">
+    <div class="avatar"></div>
+    <div class="content">
+      <div class="name">Username</div>
+      <div class="email">User email</div>
+    </div>
+  </div>
+</header>
+```
+
+Header css example:
+
+```css
+/* Basic styling for the header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #e9e9e9; /* Divider under header */
+}
+
+/* Logo section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Tabs styling */
+.tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.tab {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.tab:hover {
+  color: #555;
+}
+
+.tab.selected {
+  border-bottom: 2px solid black;
+  color: black;
+}
+
+/* Search section */
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-input {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 8px; /* 8px border radius for search input */
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #333; /* Dark border on focus */
+}
+
+/* Profile section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.name,
+.email {
+  font-size: 14px;
+}
+```
+
+**Summary:**
+
+1. **Molecules**: Combine atomic components (buttons, inputs, modals) into functional units. These components will be reusable and provide essential UI elements like cards, input groups, and models.
+2. **Organisms**: Combine multiple molecules to create more complex UI structures like navigation bars, headers, and footers. Organisms represent larger sections of your application or website.
+
+## **Transitions for Interactive Elements**
+
+Add smooth transitions for buttons, hover effects, and clickable elements to enhance user feedback.
+
+### Example: Button Clicks & Hover
+
+```css
+/* Button Style */
+.button {
+  background-color: #003078;
+  color: #ffffff;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover State */
+.button:hover {
+  background-color: #001a40;
+  transform: scale(1.05);
+}
+
+/* Active/Click State */
+.button:active {
+  transform: scale(0.95);
+}
+```
+
+---
+
+### **Document Animations for Modal Open/Close Effects**
+
+Use CSS keyframes and transitions to create smooth animations for modal windows.
+
+Example: Modal Open/Close Animation
+
+```css
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Modal Content */
+.modal {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+/* Open Modal State */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+```
+
+JavaScript to Trigger Modal
+
+```jsx
+const modalOverlay = document.querySelector(".modal-overlay");
+const openModalBtn = document.querySelector("#openModal");
+const closeModalBtn = document.querySelector("#closeModal");
+
+openModalBtn.addEventListener("click", () => {
+  modalOverlay.classList.add("active");
+});
+
+closeModalBtn.addEventListener("click", () => {
+  modalOverlay.classList.remove("active");
+});
+```
+
+---
+
+### **Shimmer Loading Animation**
+
+A shimmer effect for loading states enhances the visual appeal during content load.
+
+Example: Shimmer Effect
+
+```css
+/* Shimmer Background */
+.shimmer {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e9e9e9 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Keyframes */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+```
+
+Usage in HTML
+
+```html
+<div class="shimmer" style="width: 300px; height: 20px;"></div>
+<div
+  class="shimmer"
+  style="width: 200px; height: 20px; margin-top: 10px;"
+></div>
+```
+
+---
+
+Summary of Features
+
+1. **Interactive Transitions**:
+   - Buttons with hover, click, and active states.
+   - Smooth scaling and color changes.
+2. **Modal Animations**:
+   - Fade-in/out overlay and slide-down modal content.
+3. **Shimmer Effect**:
+   - Attractive loading animation for placeholders.
