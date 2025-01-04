@@ -1,49 +1,27 @@
-import { fn } from '@storybook/test';
-
-import { Button } from './Button';
-
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+// Button.stories.js
+import React from 'react';
+import Button from './Button';
+import { ReactComponent as SampleIcon } from './assets/active-icon.svg';
+import  SampleImage  from './assets/sample-image.png';
 export default {
-  title: 'Example/Button',
+  title: 'Components/Tile Button',
   component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
-};
-
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary = {
-  args: {
-    primary: true,
-    label: 'Button',
+    text: { control: 'text' },
+    onClick: { action: 'clicked' },
   },
 };
 
-export const Secondary = {
-  args: {
-    label: 'Button',
-  },
+const Template = (args) => <Button {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {
+  image:()=> <img src={SampleImage} alt="Sample" style={{ width: '40px', height: '40px' }} />,
+  text: 'View Photos (100)',
 };
 
-export const Large = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  text: 'Active Applications (2)',
+  icon: SampleIcon,
 };

@@ -1,6 +1,6 @@
 # Minilo Design System
 
-[**v1.minilo.io**](http://v1.minilo.io/)
+[**minilo.io**](http://www.minilo.io/)
 
 ---
 
@@ -184,7 +184,7 @@ This project is licensed under the **Apache 2.0 License**. See the [LICENSE](LIC
 
 ## 🧠 **Stay Connected**
 
-- **Website:** [v1.minilo.io](http://v1.minilo.io/)
+- **Website:** [minilo.io](http://www.minilo.io/)
 - **Documentation:** [docs.minilo.io](http://docs.minilo.io/)
 - **Community:** [Discord](https://discord.gg/minilo-design)
 
@@ -194,5 +194,6 @@ Let's **build better designs together** with **Minilo Design System**! 🚀✨
 
 ---
 
-© 2024 Minilo Design System. All Rights Reserved.
+Copyright 2025 © Minilo Design. All Rights Reserved.
+
 # minilo-design-system
