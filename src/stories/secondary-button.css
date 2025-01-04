@@ -1,0 +1,49 @@
+/* Secondary Button Base Styles */
+.secondary-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 8px;
+  
+    width: 338px;
+    height: 52px;
+  
+    background: #FFFEFE;
+    border: 1px solid #003078;
+    border-radius: 4px;
+    cursor: pointer;
+  
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #003078;
+    text-align: center;
+  
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Hover State */
+  .secondary-button:hover {
+    background: #F0F8FF;
+    border-color: #002060;
+  }
+  
+  /* Disabled State */
+  .secondary-button.disabled {
+    background: #F9F9F9;
+    border-color: #C0C0C0;
+    color: #A0A0A0;
+    cursor: not-allowed;
+  }
+  
+  /* Icon Styling */
+  .secondary-button-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  
