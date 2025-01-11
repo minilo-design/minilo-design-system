@@ -1,0 +1,47 @@
+/* Tertiary Button Base Styles */
+.tertiary-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 8px;
+  
+    width: 150px;
+    height: 52px;
+  
+    background: #FFFEFE;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #003078;
+    text-align: center;
+  
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Hover State */
+  .tertiary-button:hover {
+    background: #F0F8FF;
+    color: #002060;
+  }
+  
+  /* Disabled State */
+  .tertiary-button.disabled {
+    background: #F9F9F9;
+    color: #A0A0A0;
+    cursor: not-allowed;
+  }
+  
+  /* Icon Styling */
+  .tertiary-button-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  

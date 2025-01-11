@@ -1,10 +1,10 @@
 import React from 'react';
-import SecondaryButton from './SecondaryButton';
-import { ReactComponent as SampleIcon } from './assets/add-icon.svg';
+import TertiaryButton from './TertiaryButton';
+import { ReactComponent as SampleIcon } from '../assets/add-icon.svg';
 
 export default {
-  title: 'Components/Secondary Button',
-  component: SecondaryButton,
+  title: 'Components/Tertiary Button',
+  component: TertiaryButton,
   argTypes: {
     text: { control: 'text' },
     onClick: { action: 'clicked' },
@@ -13,24 +13,23 @@ export default {
   },
 };
 
-const Template = (args) => <SecondaryButton {...args} />;
+const Template = (args) => <TertiaryButton {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  text: 'Add to List',
+  text: 'Add Item',
   disabled: false,
 };
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-  text: 'Add to List',
+  text: 'Add Item',
   icon: SampleIcon,
   disabled: false,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  icon: null,
-  text: 'Add to List',
+  text: 'Add Item',
   disabled: true,
 };

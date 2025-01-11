@@ -1,8 +1,8 @@
 // Button.stories.js
 import React from 'react';
 import Button from './TileButton';
-import { ReactComponent as SampleIcon } from './assets/active-icon.svg';
-import  SampleImage  from './assets/sample-image.png';
+import { ReactComponent as SampleIcon } from '../assets/active-icon.svg';
+import  SampleImage  from '../assets/sample-image.png';
 export default {
   title: 'Components/Tile Button',
   component: Button,

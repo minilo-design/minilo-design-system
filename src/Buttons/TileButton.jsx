@@ -1,6 +1,6 @@
 import React from 'react';
 import './tile-button.css';
-import { ReactComponent as ArrowIcon } from './assets/arrow.svg';
+import { ReactComponent as ArrowIcon } from '../assets/arrow.svg';
 
 const Button = ({ image: Image, text, icon: Icon, onClick }) => {
   return (
