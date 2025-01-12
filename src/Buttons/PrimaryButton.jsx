@@ -1,14 +1,19 @@
 import React from 'react';
 import './primary-button.css';
+import './shimmer.css';
 
-const PrimaryButton = ({ text, onClick, disabled }) => {
+const PrimaryButton = ({ text, onClick, disabled ,loading}) => {
   return (
     <button 
-      className={`primary-button ${disabled ? 'disabled' : ''}`} 
+      className={`primary-button ${loading ? 'loading' : ''} ${disabled ? 'disabled' : ''}`} 
       onClick={onClick} 
-      disabled={disabled}
+      disabled={disabled || loading}
     >
-      {text}
+      { loading ? (
+        <span className='shimmer'/>
+       ) : (
+        <span className='primary-button-text'> {text} </span>  
+      )} 
     </button>
   );
 };

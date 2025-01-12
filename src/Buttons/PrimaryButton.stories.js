@@ -8,6 +8,7 @@ export default {
     text: { control: 'text' },
     onClick: { action: 'clicked' },
     disabled: { control: 'boolean' },
+    loading: {control: 'boolean'}
   },
 };
 
@@ -23,4 +24,10 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   text: 'Sign In',
   disabled: true,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  text: 'Sign In',
+  loading: true
 };

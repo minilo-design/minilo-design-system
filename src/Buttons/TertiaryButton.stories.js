@@ -10,6 +10,7 @@ export default {
     onClick: { action: 'clicked' },
     disabled: { control: 'boolean' },
     icon: { control: 'boolean' },
+    loading: {control: 'boolean'}
   },
 };
 
@@ -32,4 +33,11 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   text: 'Add Item',
   disabled: true,
+};
+
+
+export const Loading = Template.bind({});
+Loading.args = {
+  text: 'Add Item',
+  loading: true,
 };

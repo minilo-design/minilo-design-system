@@ -10,6 +10,7 @@ export default {
     onClick: { action: 'clicked' },
     disabled: { control: 'boolean' },
     icon: { control: 'boolean' },
+    loading: {control: 'boolean'}
   },
 };
 
@@ -33,4 +34,11 @@ Disabled.args = {
   icon: null,
   text: 'Register',
   disabled: true,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  icon: null,
+  text: 'Register',
+  loading:true
 };
