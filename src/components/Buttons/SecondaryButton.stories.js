@@ -1,6 +1,6 @@
 import React from 'react';
 import SecondaryButton from './SecondaryButton';
-import { ReactComponent as SampleIcon } from '../assets/add-icon.svg';
+import { ReactComponent as SampleIcon } from '../../assets/add-icon.svg';
 
 export default {
   title: 'Components/Secondary Button',

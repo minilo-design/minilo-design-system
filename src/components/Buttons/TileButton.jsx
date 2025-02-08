@@ -1,6 +1,6 @@
 import React from 'react';
 import './tile-button.css';
-import { ReactComponent as ArrowIcon } from '../assets/arrow.svg';
+import { ReactComponent as ArrowIcon } from '../../assets/arrow.svg';
 
 const TileButton = ({ image: Image, text, icon: Icon, loading, disabled, onClick }) => {
   return (
