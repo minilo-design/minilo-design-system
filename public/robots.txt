@@ -1,3 +1,11 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt
+
 User-agent: *
-Disallow:
+Disallow: /private/
+Allow: /public/
+
+# Crawl-delay to avoid overloading server
+Crawl-delay: 10
+
+# Sitemap link
+Sitemap: https://minilo.io/sitemap.xml
