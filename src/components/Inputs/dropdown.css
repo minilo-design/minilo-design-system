@@ -1,0 +1,114 @@
+.dropdown-container {
+    position: relative;
+    width: 343px;
+    height: 74px;
+  }
+  
+  /* Label */
+  .dropdown-label-container {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    background: #fffefe;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 4px;
+    height: 16px;
+    z-index: 2; /* Ensures label appears above border box */
+  }
+  
+  .dropdown-label {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #383f43;
+  }
+  
+  .dropdown-error-dot {
+    width: 6px;
+    height: 6px;
+    background: #e00000;
+    border-radius: 50%;
+  }
+  
+  /* Input Field Box */
+  .dropdown-input-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 7px;
+    height: 48px;
+    background: #ffffff;
+    z-index: 1;
+  }
+  
+  /* Border */
+  .dropdown-border {
+    box-sizing: border-box;
+    position: absolute;
+    height: 48px;
+    left: 0;
+    right: 0;
+    top: 0;
+    border: 1px solid #b1b4b6;
+    border-radius: 4px;
+    background: #ffffff;
+  }
+  
+  /* Placeholder text */
+  .dropdown-placeholder {
+    position: absolute;
+    left: 16px;
+    top: 12px;
+    width: 200px;
+    height: 24px;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #383f43;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Dropdown Arrow */
+  .dropdown-arrow {
+    position: absolute;
+    top: 12px;
+    height: 24px;
+    width: 24px;
+    right: 12px;
+    fill: #383f43;
+    z-index: 3;
+  }
+
+  .dropdown-options {
+    position: absolute;
+    top: 60px; /* below the input box */
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #b1b4b6;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+  
+  .dropdown-option {
+    padding: 10px 16px;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    color: #383f43;
+  }
+  
+  .dropdown-option:hover {
+    background-color: #f3f2f1;
+  }
+  
+  

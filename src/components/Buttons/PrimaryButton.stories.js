@@ -2,13 +2,13 @@ import React from 'react';
 import PrimaryButton from './PrimaryButton';
 
 export default {
-  title: 'Components/Primary Button',
+  title: 'Components/Buttons/Primary Button',
   component: PrimaryButton,
   argTypes: {
     text: { control: 'text' },
     onClick: { action: 'clicked' },
     disabled: { control: 'boolean' },
-    loading: {control: 'boolean'}
+    loading: { control: 'boolean' },
   },
 };
 
@@ -18,16 +18,26 @@ export const Default = Template.bind({});
 Default.args = {
   text: 'Sign In',
   disabled: false,
+  loading: false,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   text: 'Sign In',
   disabled: true,
+  loading: false,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
   text: 'Sign In',
-  loading: true
+  disabled: false,
+  loading: true,
+};
+
+export const DisabledAndLoading = Template.bind({});
+DisabledAndLoading.args = {
+  text: 'Sign In',
+  disabled: true,
+  loading: true,
 };

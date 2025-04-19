@@ -2,7 +2,7 @@ import React from 'react';
 import CardXS from './CardXS';
 
 export default {
-  title: 'Components/CardXS',
+  title: 'Components/Cards/CardXS',
   component: CardXS,
   argTypes: {
     onClick: { action: 'clicked' },

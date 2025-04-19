@@ -3,7 +3,7 @@ import TertiaryButton from './TertiaryButton';
 import { ReactComponent as SampleIcon } from '../../assets/add-icon.svg';
 
 export default {
-  title: 'Components/Tertiary Button',
+  title: 'Components/Buttons/Tertiary Button',
   component: TertiaryButton,
   argTypes: {
     text: { control: 'text' },

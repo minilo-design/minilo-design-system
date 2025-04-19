@@ -3,7 +3,7 @@ import CardSmall from './CardSmall';
 import { ReactComponent as SampleIcon } from '../../assets/Invite.svg';
 
 export default {
-  title: 'Components/CardSmall',
+  title: 'Components/Cards/CardSmall',
   component: CardSmall,
 };
 

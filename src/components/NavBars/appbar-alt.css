@@ -1,0 +1,113 @@
+.appbar-alt {
+    position: relative;
+    width: 375px;
+    height: 100px;
+  }
+  
+  /* STATUS BAR */
+  .status-bar-alt {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 44px;
+    background: #003078;
+  }
+  
+  .status-bar-alt .time {
+    position: absolute;
+    left: 21px;
+    top: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .status-bar-alt .right-icons {
+    position: absolute;
+    right: 17px;
+    top: 17.33px;
+    display: flex;
+    gap: 8px;
+  }
+  
+  .status-bar-alt .signal,
+  .status-bar-alt .wifi,
+  .status-bar-alt .battery {
+    background: #ffffff;
+    border-radius: 2px;
+  }
+  
+  .signal {
+    width: 17px;
+    height: 10.67px;
+  }
+  
+  .wifi {
+    width: 15.27px;
+    height: 10.97px;
+  }
+  
+  .battery {
+    position: relative;
+    width: 22px;
+    height: 11.33px;
+    border: 1px solid #ffffff;
+    opacity: 0.35;
+    border-radius: 2.66px;
+  }
+  
+  .battery-inner {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 7.33px;
+    background: #ffffff;
+    border-radius: 1.1px;
+  }
+  
+  .battery-cap {
+    position: absolute;
+    top: 4px;
+    right: -3px;
+    width: 1.33px;
+    height: 4px;
+    background: #ffffff;
+    opacity: 0.4;
+  }
+  
+  /* TOP NAVIGATION */
+  .top-navigation {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: #003078;
+    border-bottom: 1px solid #f3f2f1;
+    border-radius: 0 0 32px 32px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .back-icon {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+  }
+  
+  .nav-title {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+  }
+  

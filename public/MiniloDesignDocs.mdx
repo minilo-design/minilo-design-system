@@ -1,8 +1,8 @@
-# Minilo Design System Documentation
+# Documentation
 
-[minilo.io](http://www.minilo.io/)
+[minilo.io](https://www.minilo.io)
 
-## Vision
+## **Vision**
 
 Our vision is to **redefine the bridge between design and development** by creating a **streamlined, niche design system** that eliminates inefficiencies, reduces friction, and accelerates the journey from **concept to code**.
 
@@ -42,14 +42,29 @@ The purpose of this design system is to:
 
 ## Design Principles
 
-1. **Border Radius**: Use a fixed border-radius of 8px or 8% of the rectangle size, whichever is more consistent with the design.
-2. **Border Color**: All borders should have a fixed color: `#E9E9E9`.
-3. **Container Background**: The background color of all containers should be white for a clean and minimalistic look.
-4. **Text Styling**: Titles or text inside containers or buttons should always be bold to ensure clarity and emphasis.
-5. **Layout Background**: The layout background color should be `#FDFCFF` to maintain a consistent, soft aesthetic.
-6. All components follow a unified visual language.
-7. The framework can adapt to new features easily.
-8. WCAG-compliant components.
+**1. Border Radius**  
+ Use a fixed border-radius of **8px** or **8%** of the rectangle size — whichever provides more visual consistency.
+
+**2. Border Color**  
+ All borders should use a fixed color: `#E9E9E9`.
+
+**3. Container Background**  
+ Containers should have a **white** background to support a clean and minimalistic design aesthetic.
+
+**4. Text Styling**  
+ All titles or button text should be **bold** for clarity and emphasis.
+
+**5. Layout Background**  
+ The overall layout background color should be `#FDFCFF` to maintain a consistent, soft tone.
+
+**6. Unified Visual Language**  
+ All components should follow a single, cohesive visual language across the system.
+
+**7. Adaptability**  
+ The framework should support easy integration of new features as the product evolves.
+
+**8. Accessibility**  
+ All components must comply with **WCAG** accessibility standards.
 
 ---
 
@@ -77,48 +92,62 @@ To support the primary colors for borders, backgrounds, and subtle variations.
   - Neutral 2: `#3A3A3A` (Dark Gray for Borders)
   - Text: `#FFFFFF` (Pure White)
 
-### Typography
+## Typography
 
-[typography-system-responsive.css](Minilo%20Documentation%2014717d5eeee180c28ecfd1b19eea3c5d/typography-system-responsive.css)
+### 1. Font Family
 
-1. Font family:
-   - Noto Sans is the default
-   - Fallback to sans serif
-2. Mobile Font Sizes (scaled down from desktop):
-   - H1: 28px (was 32px)
-   - H2: 22px (was 24px)
-   - H3: 18px (was 20px)
-   - H4: 16px (was 18px)
-   - H5: 14px (was 16px)
-   - H6: 12px (was 14px)
-   - Small: 11px (was 12px)
-3. Mobile Line Heights:
-   - Proportionally reduced to maintain readability
-   - Maintains comfortable reading experience on smaller screens
-4. Features:
-   - CSS variables for both mobile and desktop sizes
-   - Responsive breakpoint at 768px
-   - Maintained weight classes
-   - Clean, simplified structure
-   - Zero-letter spacing maintained
+- **Primary:** Noto Sans
+- **Fallback:** Sans-serif
 
-To use this system:
+### 2. Mobile Font Sizes (scaled down from desktop)
 
-1. Import Noto sans font
-2. Include this CSS in your project
-3. Styles will automatically adjust based on screen size
-4. Use either semantic tags (h1-h6) or utility classes (.h1-.h6)
-5. Add weight classes as needed (e.g., `class="h1 bold"`)
+| Element | Mobile Size | Desktop Size |
+| ------- | ----------- | ------------ |
+| H1      | 28px        | 32px         |
+| H2      | 22px        | 24px         |
+| H3      | 18px        | 20px         |
+| H4      | 16px        | 18px         |
+| H5      | 14px        | 16px         |
+| H6      | 12px        | 14px         |
+| Small   | 11px        | 12px         |
 
-### Spacing & Layout Guidelines
+### 3. Mobile Line Heights
 
-**1. Grid System**
+- Proportionally reduced for smaller screens
+- Optimized for readability and spacing
+
+### 4. Features
+
+- Uses **CSS variables** for both mobile and desktop sizing
+- **Responsive breakpoint:** `768px`
+- Maintains all font **weight classes**
+- **Clean and simplified structure**
+- **Zero letter-spacing** maintained for consistency
+
+### How to Use This Typography System
+
+1. **Import the Noto Sans font** into your project.
+
+2. **Include the typography CSS** file in your global styles.
+
+3. Styles will **automatically adjust based on screen size** using responsive breakpoints.
+
+4. Use either:
+
+   - **Semantic HTML tags** (`<h1>` to `<h6>`)
+   - **Utility classes** (`.h1` to `.h6`)
+
+5. Add **weight classes** as needed (e.g., `class="h1 bold"`).
+
+## Spacing & Layout Guidelines
+
+### **1. Grid System**
 
 - **Base Spacing Unit**: 8px
   - This will act as the fundamental unit of spacing in your design system. All spacing (margins, padding, etc.) will be based on multiples of this unit (e.g., 8px, 16px, 24px).
   - **Consistency**: Using a consistent spacing unit will ensure a visually balanced and harmonious layout across different platforms and devices.
 
-**2. Responsive Layout & Breakpoints**
+### **2. Responsive Layout & Breakpoints**
 
 A responsive layout ensures that your design adapts seamlessly across various screen sizes. Here's a breakdown of the breakpoints:
 
@@ -138,7 +167,7 @@ A responsive layout ensures that your design adapts seamlessly across various sc
   - For larger desktops and wide screens.
   - Adjustments: Maximize content width, and use flexible grids to ensure content remains balanced.
 
-**3. Layout Grid**
+### **3. Layout Grid**
 
 - **Columns**:
   - **Mobile**: 1 column
@@ -148,7 +177,7 @@ A responsive layout ensures that your design adapts seamlessly across various sc
   - **Mobile and Tablet**: 16px (for tighter layouts on smaller screens)
   - **Desktop**: 24px (wider gutters for larger screens)
 
-**4. Margins & Padding**
+### **4. Margins & Padding**
 
 - **Container Padding**:
   - **Mobile**: 16px
@@ -157,15 +186,13 @@ A responsive layout ensures that your design adapts seamlessly across various sc
   - **Mobile**: 8px
   - **Tablet & Desktop**: 16px
 
-**5. Typography**
+### **5. Typography**
 
 - **Line Height**: 1.4x the font size for readability.
 - **Text Spacing**: Use the base spacing unit (8px) for consistent spacing between text elements like paragraphs and headings.
   ***
 
-## Design Tokens
-
-### **Design Tokens**
+## **Design Tokens**
 
 Design tokens are a set of variables that define the visual design aspects of your system. These tokens allow you to consistently apply styles across different platforms and devices while making it easier to manage and update your design system. Below are examples of how to define your design tokens:
 
@@ -237,7 +264,7 @@ Defines the depth effect of elements, although your framework might avoid shadow
 
 ---
 
-## Atomic Components
+### Atomic Components
 
 **Loading State (with Shimmer Loading)**
 
@@ -1181,7 +1208,7 @@ Usage in HTML
 
 ---
 
-Summary of Features
+### Summary of Features
 
 1. **Interactive Transitions**:
    - Buttons with hover, click, and active states.

@@ -1,0 +1,74 @@
+.textfield-container {
+    position: relative;
+    width: 343px;
+    height: 74px;
+  }
+  
+  /* Border Box */
+  .textfield-border {
+    position: absolute;
+    height: 48px;
+    left: 0;
+    right: 0;
+    top: 7px;
+    background: #ffffff;
+    border: 1px solid #c1c1c2;
+    border-radius: 4px;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  
+  /* Label */
+  .textfield-label-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 0 4px;
+  
+    position: absolute;
+    top: 0px;
+    left: 12px;
+    height: 16px;
+    background: #fffefe;
+    z-index: 2; /* ensures it's above the border */
+  }
+  
+  .textfield-label {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #383f43;
+  }
+  
+  .textfield-label.disabled {
+    color: #a2a3a4;
+  }
+  
+  /* Input */
+  .textfield-input {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #51575b;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 90%;
+    z-index: 2;
+  }
+  
+  .textfield-input::placeholder {
+    color: #7a7e81;
+  }
+  
+  .textfield-input.disabled {
+    color: #a2a3a4;
+    pointer-events: none;
+  }
+  

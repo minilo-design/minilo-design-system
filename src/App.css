@@ -1,20 +1,24 @@
+/* Default styles for App component */
 .App {
   text-align: center;
 }
 
+/* Logo styling */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* Animation for App logo */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Header specific styling */
 .App-header {
-  background-color: #282c34;
+  background-color: #003078;  /* Updated to your primary color */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,10 +28,12 @@
   color: white;
 }
 
+/* Link styling */
 .App-link {
   color: #61dafb;
 }
 
+/* Keyframes for spinning logo */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

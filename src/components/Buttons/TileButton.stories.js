@@ -4,7 +4,7 @@ import { ReactComponent as SampleIcon } from '../../assets/active-icon.svg';
 import SampleImage from '../../assets/sample-image.png';
 
 export default {
-  title: 'Components/Tile Button',
+  title: 'Components/Buttons/Tile Button',
   component: Button,
   argTypes: {
     text: { control: 'text' },

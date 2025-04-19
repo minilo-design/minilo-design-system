@@ -1,0 +1,187 @@
+.item-card {
+    position: relative;
+    width: 323px;
+    height: 150px;
+  }
+  
+  /* Main card */
+  .card-rect {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 26.11%;
+    bottom: 0%;
+    background: #ffffff;
+    border: 1px solid #f3f2f1;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+  
+  /* Left Accent */
+  .left-accent {
+    position: absolute;
+    left: 0%;
+    right: 99.07%;
+    top: 26.11%;
+    bottom: 0%;
+    background: #003078;
+    border-radius: 6px 0px 0px 6px;
+  }
+  
+  /* Main Title */
+  .coin-text {
+    position: absolute;
+    left: 4.95%;
+    right: 70.9%;
+    top: 30.05%;
+    bottom: 58.13%;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #003078;
+  }
+  
+  /* Description Texts */
+  .desc-text-1,
+  .desc-text-2 {
+    position: absolute;
+    left: 4.95%;
+    right: 9.6%;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #666666;
+  }
+  
+  .desc-text-1 {
+    top: 45.81%;
+    bottom: 42.36%;
+  }
+  
+  .desc-text-2 {
+    top: 59.61%;
+    bottom: 28.57%;
+  }
+  
+  /* Badge Background */
+  .badge-bg {
+    position: absolute;
+    left: 74.61%;
+    right: 0%;
+    top: 26.11%;
+    bottom: 60%;
+    background: #005a30;
+    opacity: 0.2;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 6px;
+  }
+  
+  /* Badge Text */
+  .badge-text {
+    position: absolute;
+    left: 80.19%;
+    right: 5.57%;
+    top: 25.62%;
+    bottom: 62.56%;
+    font-family: 'Noto Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    color: #005a30;
+  }
+  
+  .shimmer-block {
+    border-radius: 4px;
+    background: #f6f7f8;
+    background-image: linear-gradient(
+      to right,
+      #f6f7f8 0%,
+      #edeef1 20%,
+      #f6f7f8 40%,
+      #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 1000px 100%;
+    animation: shimmer 1.6s infinite linear;
+  }
+  
+  
+  /* Placeholder sizes */
+  .text-shimmer {
+    width: 70%;
+    height: 14px;
+  }
+  
+  .text-shimmer.small {
+    width: 40%;
+    height: 12px;
+  }
+  
+  /* Buttons */
+  .card-button {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 8px;
+    background: #fffefe;
+    border-radius: 6px;
+  }
+  
+  .left-button {
+    left: 2.17%;
+    right: 76.47%;
+    top: 77.83%;
+    bottom: 8.87%;
+  }
+  
+  .right-button {
+    left: 35.29%;
+    right: 32.82%;
+    top: 77.83%;
+    bottom: 8.87%;
+  }
+  
+  /* Icon */
+  .button-icon {
+    width: 15px;
+    height: 15px;
+    flex: none;
+  }
+  
+  /* Label */
+  .button-label {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    flex: none;
+  }
+  
+  .blue-text {
+    color: #003078;
+  }
+  
+  .red-text {
+    color: #d4351c;
+  }
+  
+  /* Shimmer animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -800px 0;
+    }
+    100% {
+      background-position: 800px 0;
+    }
+  }
+  

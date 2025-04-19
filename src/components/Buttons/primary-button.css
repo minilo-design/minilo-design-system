@@ -33,9 +33,15 @@
     cursor: not-allowed;
   }
 
-    /* Loading State */
+    /* Loading with Enabled State */
     .primary-button.loading {
-      background: #A0A0A0;
+      background: #003078;
       cursor: progress;
     }
+
+   /* Loading with Disabled State */
+   .primary-button.loading-disabled {
+    background: #A0A0A0;
+    cursor: progress;
+  }
   
