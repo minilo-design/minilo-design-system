@@ -28,7 +28,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   };
 
   const handleStorybookRedirect = () => {
-    window.open('https://minilo.io/storybook', '_blank');
+    window.open('https://storybook.minilo.io', '_blank');
   };
 
   return (
