@@ -1,55 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'; // For GitHub-flavored markdown (if needed)
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
 
-const Docs: React.FC = () => {
-  const [mdxContent, setMdxContent] = useState<string>('');
-
-  useEffect(() => {
-    const fetchMDXContent = async () => {
-      const res = await fetch('/MiniloDesignDocs.mdx'); // Ensure this path is public or served properly
-      const text = await res.text();
-      setMdxContent(text);
-    };
-    
-    fetchMDXContent();
-  }, []);
-
-  const components = {
-    h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h1 className="text-3xl font-bold mb-6" {...props} />
-    ),
-    h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h2 className="text-2xl font-semibold mt-8 mb-4" {...props} />
-    ),
-    h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h3 className="text-xl font-semibold mt-6 mb-2" {...props} />
-    ),
-    p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-      <p className="text-gray-700 mb-4" {...props} />
-    ),
-    code: ({ inline, className, children, ...props }: any) => (
-      <code
-        className={`bg-gray-100 px-1 rounded text-sm font-mono ${className || ''}`}
-        {...props}
-      >
-        {children}
-      </code>
-    ),
-    pre: ({ className, children, ...props }: any) => (
-      <pre
-        className={`bg-gray-100 p-4 rounded overflow-x-auto mb-4 ${className || ''}`}
-        {...props}
-      >
-        {children}
-      </pre>
-    ),
-  };
-
+const About = () => {
   return (
+
     <>
-     <Head>
+      <Head>
         <title>Minilo Design</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -98,17 +54,41 @@ const Docs: React.FC = () => {
 
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-    <div className="min-h-screen bg-[#FDFCFF] p-8 text-gray-800">
-      <ReactMarkdown
-  remarkPlugins={[remarkGfm]}
-  components={components}
->
-  {mdxContent}
-</ReactMarkdown>
+    
+  
+    <div className="bg-[#FDFCFF] p-8 rounded-lg max-w-4xl mx-auto">
+      
+      {/* Title section */}
+      <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+        About the Minilo Design
+      </h1>
 
+      {/* Content section */}
+      <p className="text-sm text-gray-700 leading-relaxed">
+        Minilo is a minimalistic, open-source design system that provides
+        flexible components and tools for building user interfaces across
+        different platforms. The system focuses on simplicity, consistency, and
+        scalability, enabling teams to create seamless and cohesive user
+        experiences.
+      </p>
+
+      <p className="text-sm text-gray-700 mt-4">
+        With a fixed border radius of 8px, a consistent color palette, and a
+        clean, modern aesthetic, Minilo is designed to be timeless and adaptable
+        to future trends. Whether you're building a mobile app, website, or any
+        other product, Minilo offers the foundation you need for a polished,
+        intuitive UI.
+      </p>
+
+      <p className="text-sm text-gray-700 mt-4">
+        As an open-source project, Minilo encourages collaboration and
+        contributions from the community. Whether you're a designer, developer,
+        or enthusiast, you can help shape the future of this design system by
+        contributing to its growth and evolution.
+      </p>
     </div>
     </>
   );
 };
 
-export default Docs;
+export default About;

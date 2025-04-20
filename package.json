@@ -6,21 +6,22 @@
     "cra-template-typescript": "1.2.0",
     "lucide-react": "^0.488.0",
     "mdx-loader": "^3.0.2",
+    "next": "^15.3.1",
+    "next-images": "^1.8.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
-    "react-scripts": "5.0.1",
     "rehype-react": "^8.0.0",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "storybook": "NODE_ENV=development storybook dev -p 6006",
+    "build-storybook": "NODE_ENV=production storybook build"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +50,7 @@
     "@chromatic-com/storybook": "^3.2.6",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.16",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
@@ -70,6 +72,7 @@
     "postcss": "^8.5.3",
     "prop-types": "^15.8.1",
     "react-app-rewired": "^2.2.1",
+    "react-refresh": "^0.17.0",
     "storybook": "^8.6.12",
     "tailwindcss": "^3.4.17",
     "ts-jest": "^29.3.2",

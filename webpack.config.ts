@@ -27,6 +27,10 @@ const config: Configuration = {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-react'],
+              plugins: [
+                // Only apply react-refresh in development mode
+                ...(process.env.NODE_ENV === 'development' ? ['react-refresh/babel'] : []),
+              ],
             },
           },
           '@mdx-js/loader',
@@ -75,13 +79,16 @@ const config: Configuration = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
-    new ReactRefreshWebpackPlugin(),
+    // Only add ReactRefreshWebpackPlugin in development mode
+    ...(process.env.NODE_ENV === 'development' ? [new ReactRefreshWebpackPlugin()] : []),
   ],
   devServer: {
     static: path.join(__dirname, 'dist'),
     port: 3000,
     hot: true,
   },
+  // Ensure that mode is correctly typed
+  mode: (process.env.NODE_ENV as 'development' | 'production' | 'none') || 'development',
 };
 
 export default config;

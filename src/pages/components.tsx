@@ -1,55 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'; // For GitHub-flavored markdown (if needed)
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
+// Ensure this matches your SVG handling setup
 
-const Docs: React.FC = () => {
-  const [mdxContent, setMdxContent] = useState<string>('');
-
-  useEffect(() => {
-    const fetchMDXContent = async () => {
-      const res = await fetch('/MiniloDesignDocs.mdx'); // Ensure this path is public or served properly
-      const text = await res.text();
-      setMdxContent(text);
-    };
-    
-    fetchMDXContent();
-  }, []);
-
-  const components = {
-    h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h1 className="text-3xl font-bold mb-6" {...props} />
-    ),
-    h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h2 className="text-2xl font-semibold mt-8 mb-4" {...props} />
-    ),
-    h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h3 className="text-xl font-semibold mt-6 mb-2" {...props} />
-    ),
-    p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-      <p className="text-gray-700 mb-4" {...props} />
-    ),
-    code: ({ inline, className, children, ...props }: any) => (
-      <code
-        className={`bg-gray-100 px-1 rounded text-sm font-mono ${className || ''}`}
-        {...props}
-      >
-        {children}
-      </code>
-    ),
-    pre: ({ className, children, ...props }: any) => (
-      <pre
-        className={`bg-gray-100 p-4 rounded overflow-x-auto mb-4 ${className || ''}`}
-        {...props}
-      >
-        {children}
-      </pre>
-    ),
-  };
-
+const Components = () => {
   return (
     <>
-     <Head>
+      <Head>
         <title>Minilo Design</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -98,17 +54,48 @@ const Docs: React.FC = () => {
 
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-    <div className="min-h-screen bg-[#FDFCFF] p-8 text-gray-800">
-      <ReactMarkdown
-  remarkPlugins={[remarkGfm]}
-  components={components}
->
-  {mdxContent}
-</ReactMarkdown>
+      <div className="bg-[#FDFCFF] p-8 rounded-lg border border-[#E9E9E9] max-w-4xl mx-auto">
 
+      
+      {/* Figma link section */}
+      <h1 className="text-1xl font-semibold text-gray-800 mb-6 text-center">
+        <a
+          href="https://www.figma.com/design/eOMBuOepZXFo3g4LclkXlO/Minilo-Design-System?node-id=0-1&t=Ii49jLCi4V2j8jM6-1"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-indigo-600 hover:text-indigo-800 transition duration-300 ease-in-out"
+        >
+          Minilo Design System Figma
+        </a>
+      </h1>
+
+      {/* SVG component */}
+      <div className="flex justify-center mb-6">
+       
+        <img
+                src="/assets/Components.svg" // Reference SVG file from public folder
+                alt="Components"
+                className="w-72 h-72 text-gray-600"
+              />
+      </div>
+
+      {/* Divider */}
+      <hr className="my-6 border-t-2 border-gray-300" />
+
+      {/* GitHub link section */}
+      <h1 className="text-1xl font-semibold text-gray-800 mb-6 text-center">
+        <a
+          href="https://github.com/minilo-design/minilo-design-system"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-indigo-600 hover:text-indigo-800 transition duration-300 ease-in-out"
+        >
+          Minilo Design System Source Code
+        </a>
+      </h1>
     </div>
     </>
   );
 };
 
-export default Docs;
+export default Components;

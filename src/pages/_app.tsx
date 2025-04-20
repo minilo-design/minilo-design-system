@@ -1,11 +1,16 @@
+// src/pages/_app.tsx
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
 import React, { useState } from 'react';
-import Docs from './pages/Docs';
-import About from './pages/About';
-import Components from './pages/Components';
-import Home from './pages/Home';
+import dynamic from 'next/dynamic';
 
-function App() {
-  const [activeTab, setActiveTab] = useState('home'); // Default tab is home
+const Home = dynamic(() => import('./index'));
+const Docs = dynamic(() => import('./docs'));
+const About = dynamic(() => import('./about'));
+const Components = dynamic(() => import('./components'));
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  const [activeTab, setActiveTab] = useState('home');
 
   const renderTab = () => {
     switch (activeTab) {
@@ -23,7 +28,7 @@ function App() {
   };
 
   const handleStorybookRedirect = () => {
-    window.open('https://minilo.io/storybook.com', '_blank'); // Replace with your Storybook URL
+    window.open('https://minilo.io/storybook', '_blank');
   };
 
   return (
@@ -72,5 +77,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
