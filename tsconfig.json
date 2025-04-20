@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["*"] ,    // This tells TypeScript to resolve the @ alias to the root directory
+      "@/*": ["src/*"],    // This tells TypeScript to resolve the @ alias to the root directory
       "@styles/*": ["styles/*"] 
     },
     "target": "es2016",
