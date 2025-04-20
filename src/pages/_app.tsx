@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 
 const Home = dynamic(() => import('./index'));
-const Docs = dynamic(() => import('./docs'));
+const Docs = dynamic(() => import('./doc'));
 const About = dynamic(() => import('./about'));
 const Components = dynamic(() => import('./components'));
 
