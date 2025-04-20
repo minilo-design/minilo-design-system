@@ -8,7 +8,7 @@ module.exports = withImages({
     disableStaticImages: true, // Prevent Next.js from processing image imports
   },
   webpack(config) {
-    config.resolve.alias['@'] = path.resolve(__dirname);
+    config.resolve.alias['@'] = path.join(__dirname, 'src');
     config.resolve.alias['@styles'] = path.resolve(__dirname, 'styles');
     return config;
   }
