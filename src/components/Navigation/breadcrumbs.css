@@ -1,0 +1,51 @@
+.minilo-breadcrumbs-nav {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--minilo-color-border, #e9e9e9);
+  border-radius: var(--minilo-radius-md, 8px);
+  background: var(--minilo-color-surface, #ffffff);
+  font-family: var(--minilo-font-family, 'Noto Sans', sans-serif);
+}
+
+.minilo-breadcrumbs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.minilo-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.minilo-breadcrumb-link,
+.minilo-breadcrumb-current {
+  font-size: var(--minilo-font-size-xs, 12px);
+  line-height: 18px;
+}
+
+.minilo-breadcrumb-link {
+  color: var(--minilo-color-primary, #003078);
+  text-decoration: none;
+  font-weight: var(--minilo-font-weight-bold, 700);
+}
+
+.minilo-breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.minilo-breadcrumb-current {
+  color: var(--minilo-color-text, #333333);
+  font-weight: var(--minilo-font-weight-bold, 700);
+}
+
+.minilo-breadcrumb-separator {
+  color: var(--minilo-color-text-muted, #667085);
+  font-size: var(--minilo-font-size-xs, 12px);
+  font-weight: var(--minilo-font-weight-medium, 500);
+}

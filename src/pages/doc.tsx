@@ -1,47 +1,63 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'; // For GitHub-flavored markdown (if needed)
-import Head from 'next/head';
+import remarkGfm from 'remark-gfm';
+import SeoHead from '@/components/site/SeoHead';
+import { docsQuickLinks } from '@/data/site-content';
 
-const Docs: React.FC = () => {
-  const [mdxContent, setMdxContent] = useState<string>('');
+const DOC_DESCRIPTION =
+  'Documentation for the Minilo Design System including foundations, tokens, principles, and component guidelines.';
+
+export default function Docs() {
+  const [mdxContent, setMdxContent] = useState('');
 
   useEffect(() => {
     const fetchMDXContent = async () => {
-      const res = await fetch('/MiniloDesignDocs.mdx'); // Ensure this path is public or served properly
+      const res = await fetch('/MiniloDesignDocs.mdx');
       const text = await res.text();
       setMdxContent(text);
     };
-    
+
     fetchMDXContent();
   }, []);
 
-  const components = {
-    h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h1 className="text-3xl font-bold mb-6" {...props} />
+  const markdownComponents = {
+    h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <h1 className="text-3xl font-bold mb-4" {...props}>
+        {children}
+      </h1>
     ),
-    h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h2 className="text-2xl font-semibold mt-8 mb-4" {...props} />
+    h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <h2 className="text-2xl font-bold mt-10 mb-3" {...props}>
+        {children}
+      </h2>
     ),
-    h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h3 className="text-xl font-semibold mt-6 mb-2" {...props} />
+    h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <h3 className="text-xl font-semibold mt-8 mb-2" {...props}>
+        {children}
+      </h3>
     ),
-    p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-      <p className="text-gray-700 mb-4" {...props} />
+    p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
+      <p className="mb-4 leading-relaxed" {...props}>
+        {children}
+      </p>
     ),
-    code: ({ inline, className, children, ...props }: any) => (
-      <code
-        className={`bg-gray-100 px-1 rounded text-sm font-mono ${className || ''}`}
-        {...props}
-      >
+    ul: ({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
+      <ul className="list-disc pl-5 mb-4" {...props}>
+        {children}
+      </ul>
+    ),
+    ol: ({ children, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
+      <ol className="list-decimal pl-5 mb-4" {...props}>
+        {children}
+      </ol>
+    ),
+    code: ({ className, children, ...props }: any) => (
+      <code className={`font-mono text-sm ${className || ''}`} {...props}>
         {children}
       </code>
     ),
     pre: ({ className, children, ...props }: any) => (
-      <pre
-        className={`bg-gray-100 p-4 rounded overflow-x-auto mb-4 ${className || ''}`}
-        {...props}
-      >
+      <pre className={className || ''} {...props}>
         {children}
       </pre>
     ),
@@ -49,66 +65,78 @@ const Docs: React.FC = () => {
 
   return (
     <>
-     <Head>
-        <title>Minilo Design</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#003078" />
-        <meta
-          name="description"
-          content="Minilo Design is a minimalistic and adaptive design system that empowers developers with flexible components for building modern UIs."
-        />
-        <meta
-          name="keywords"
-          content="design system, Minilo, UI components, web design, responsive design, modern UI, adaptive UI"
-        />
-        <meta name="author" content="Minilo Design" />
+      <SeoHead title="Docs" description={DOC_DESCRIPTION} path="/doc" />
 
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/logo192.png" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/favicon/android-chrome-192x192.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="512x512"
-          href="/favicon/android-chrome-512x512.png"
-        />
+      <section className="page-intro">
+        <div className="minilo-kicker">Documentation</div>
+        <h1 className="page-title">Implementation guide for the full Minilo system</h1>
+        <p className="page-copy">
+          This page preserves your original documentation content while presenting it with improved readability,
+          hierarchy, and quick navigation.
+        </p>
+      </section>
 
-        <meta property="og:title" content="Minilo Design - A Modern Design System" />
-        <meta
-          property="og:description"
-          content="Minilo Design is a minimalistic and adaptive design system that empowers developers with flexible components for building modern UIs."
-        />
-        <meta property="og:image" content="/logo.png" />
-        <meta property="og:url" content="https://minilo.io" />
-        <meta property="og:type" content="website" />
+      <section className="docs-layout page-section">
+        <aside className="docs-aside" aria-label="Quick links">
+          <h2 className="docs-aside-title">Quick links</h2>
+          {docsQuickLinks.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </aside>
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Minilo Design - A Modern Design System" />
-        <meta
-          name="twitter:description"
-          content="Minilo Design is a minimalistic and adaptive design system that empowers developers with flexible components for building modern UIs."
-        />
-        <meta name="twitter:image" content="/logo192.png" />
+        <article className="docs-content" id="vision">
+          {mdxContent ? (
+            <>
+              <div id="docs-body">
+                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                  {mdxContent}
+                </ReactMarkdown>
+              </div>
 
-        <link rel="manifest" href="/site.webmanifest" />
-      </Head>
-    <div className="min-h-screen bg-[#FDFCFF] p-8 text-gray-800">
-      <ReactMarkdown
-  remarkPlugins={[remarkGfm]}
-  components={components}
->
-  {mdxContent}
-</ReactMarkdown>
+              <div id="docs-use" style={{ marginTop: '24px' }}>
+                <h2>How to use this documentation</h2>
+                <p>
+                  Start with purpose and principles, move through tokens, then map each UI element to an
+                  existing Storybook component before building product screens.
+                </p>
+              </div>
 
-    </div>
+              <div id="docs-links" style={{ marginTop: '24px' }}>
+                <h2>Project links</h2>
+                <ul>
+                  <li>
+                    <a href="https://minilo.io" target="_blank" rel="noopener noreferrer">
+                      Website
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/minilo-design/minilo-design-system"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Source code
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://storybook.minilo.io/?path=/docs/documentation--docs"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Storybook
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </>
+          ) : (
+            <p className="docs-loading">Loading documentation content...</p>
+          )}
+        </article>
+      </section>
     </>
   );
-};
-
-export default Docs;
+}

@@ -1,49 +1,49 @@
 /* Tertiary Button Base Styles */
 .tertiary-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 14px 16px;
-    gap: 8px;
-    width: 150px;
-    height: 52px;
-    background: #FFFEFE;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    color: #003078;
-    text-align: center;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  
-  /* Hover State */
-  .tertiary-button:hover:not(.disabled):not(.loading) {
-    background: #F0F8FF;
-    color: #002060;
-  }
-  
-  /* Disabled State */
-  .tertiary-button.disabled {
-    background: #F9F9F9;
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 16px;
+  gap: 8px;
+  width: 150px;
+  max-width: 100%;
+  height: 52px;
+  background: var(--minilo-color-surface, #fffefe);
+  border: none;
+  border-radius: var(--minilo-radius-sm, 4px);
+  cursor: pointer;
+  font-family: var(--minilo-font-family, 'Noto Sans', sans-serif);
+  font-weight: var(--minilo-font-weight-bold, 700);
+  font-size: var(--minilo-font-size-md, 16px);
+  line-height: 24px;
+  color: var(--minilo-color-primary, #003078);
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
 
-   /* Loading State */
-   .tertiary-button.loading {
-    background: #F9F9F9;
-    cursor: progress;
-  }
-  
-  /* Icon Styling */
-  .tertiary-button-icon {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-  }
-  
+/* Hover State */
+.tertiary-button:hover:not(.disabled):not(.loading) {
+  background: var(--minilo-color-secondary-soft, #f0f8ff);
+  color: var(--minilo-color-primary-strong, #002060);
+}
+
+/* Disabled State */
+.tertiary-button.disabled {
+  background: #f9f9f9;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading State */
+.tertiary-button.loading {
+  background: #f9f9f9;
+  cursor: progress;
+}
+
+/* Icon Styling */
+.tertiary-button-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}

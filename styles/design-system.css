@@ -1,0 +1,157 @@
+:root {
+  --minilo-color-white: #ffffff;
+  --minilo-color-black: #000000;
+
+  --minilo-color-background: #fdfcff;
+  --minilo-color-surface: #ffffff;
+  --minilo-color-surface-muted: #f7f9fc;
+  --minilo-color-border: #e9e9e9;
+
+  --minilo-color-primary: #003078;
+  --minilo-color-primary-strong: #002060;
+  --minilo-color-secondary: #0061a8;
+  --minilo-color-secondary-soft: #b3d7f2;
+
+  --minilo-color-text: #333333;
+  --minilo-color-text-muted: #667085;
+  --minilo-color-text-inverse: #f8fafc;
+
+  --minilo-color-success: #005a30;
+  --minilo-color-success-soft: rgba(0, 90, 48, 0.2);
+  --minilo-color-alert: #e63946;
+  --minilo-color-alert-soft: #ffd3d5;
+
+  --minilo-font-family: 'Noto Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --minilo-font-size-xs: 12px;
+  --minilo-font-size-sm: 14px;
+  --minilo-font-size-md: 16px;
+  --minilo-font-size-lg: 20px;
+  --minilo-font-size-xl: 24px;
+
+  --minilo-font-size-h1: 28px;
+  --minilo-font-size-h2: 22px;
+  --minilo-font-size-h3: 18px;
+  --minilo-font-size-h4: 16px;
+  --minilo-font-size-h5: 14px;
+  --minilo-font-size-h6: 12px;
+
+  --minilo-line-height-tight: 1.2;
+  --minilo-line-height-base: 1.4;
+  --minilo-line-height-loose: 1.5;
+
+  --minilo-font-weight-regular: 400;
+  --minilo-font-weight-medium: 500;
+  --minilo-font-weight-semibold: 600;
+  --minilo-font-weight-bold: 700;
+
+  --minilo-space-1: 4px;
+  --minilo-space-2: 8px;
+  --minilo-space-3: 12px;
+  --minilo-space-4: 16px;
+  --minilo-space-5: 20px;
+  --minilo-space-6: 24px;
+  --minilo-space-8: 32px;
+  --minilo-space-10: 40px;
+  --minilo-space-12: 48px;
+  --minilo-space-16: 64px;
+
+  --minilo-radius-sm: 4px;
+  --minilo-radius-md: 8px;
+  --minilo-radius-lg: 16px;
+  --minilo-radius-xl: 24px;
+  --minilo-radius-full: 999px;
+
+  --minilo-shadow-none: none;
+  --minilo-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.08);
+  --minilo-shadow-md: 0 10px 30px rgba(15, 23, 42, 0.09);
+  --minilo-shadow-lg: 0 24px 44px rgba(15, 23, 42, 0.14);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --minilo-font-size-h1: 32px;
+    --minilo-font-size-h2: 24px;
+    --minilo-font-size-h3: 20px;
+    --minilo-font-size-h4: 18px;
+    --minilo-font-size-h5: 16px;
+    --minilo-font-size-h6: 14px;
+  }
+}
+
+:root[data-theme='dark'] {
+  --minilo-color-background: #181818;
+  --minilo-color-surface: #0f172a;
+  --minilo-color-surface-muted: #111827;
+  --minilo-color-border: #3a3a3a;
+  --minilo-color-text: #ffffff;
+  --minilo-color-text-muted: #a3a3a3;
+  --minilo-color-primary: #93c5fd;
+  --minilo-color-primary-strong: #bfdbfe;
+  --minilo-color-secondary: #60a5fa;
+  --minilo-color-secondary-soft: rgba(96, 165, 250, 0.2);
+  --minilo-color-success: #22c55e;
+  --minilo-color-success-soft: rgba(34, 197, 94, 0.18);
+}
+
+.minilo-surface {
+  background: var(--minilo-color-surface);
+  border: 1px solid var(--minilo-color-border);
+  border-radius: var(--minilo-radius-md);
+}
+
+.minilo-card {
+  background: var(--minilo-color-surface);
+  border: 1px solid var(--minilo-color-border);
+  border-radius: var(--minilo-radius-lg);
+  box-shadow: var(--minilo-shadow-sm);
+}
+
+.minilo-kicker {
+  font-size: var(--minilo-font-size-xs);
+  font-weight: var(--minilo-font-weight-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--minilo-color-secondary);
+}
+
+.minilo-button {
+  border-radius: var(--minilo-radius-sm);
+  font-weight: var(--minilo-font-weight-bold);
+  font-size: var(--minilo-font-size-sm);
+  transition: 180ms ease;
+}
+
+.minilo-button-primary {
+  background: var(--minilo-color-primary);
+  color: var(--minilo-color-text-inverse);
+  border: 1px solid var(--minilo-color-primary);
+}
+
+.minilo-button-primary:hover {
+  background: var(--minilo-color-primary-strong);
+  border-color: var(--minilo-color-primary-strong);
+}
+
+.minilo-button-secondary {
+  background: var(--minilo-color-surface);
+  color: var(--minilo-color-primary);
+  border: 1px solid var(--minilo-color-primary);
+}
+
+.minilo-button-secondary:hover {
+  background: var(--minilo-color-secondary-soft);
+}
+
+.minilo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--minilo-radius-full);
+  border: 1px solid var(--minilo-color-border);
+  padding: 4px 10px;
+  background: var(--minilo-color-surface-muted);
+  color: var(--minilo-color-text-muted);
+  font-size: var(--minilo-font-size-xs);
+  line-height: var(--minilo-line-height-tight);
+}

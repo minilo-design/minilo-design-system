@@ -1,47 +1,51 @@
 /* Primary Button Base Styles */
 .primary-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 24px;
-    gap: 8px;
-    width: 343px;
-    height: 52px;
-    background: #003078;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer; 
-    font-family: 'Noto Sans', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 24px;
-    color: #FFFFFF;
-    text-align: center;  
-    transition: background 0.3s ease;
-  }
-  
-  /* Hover State */
-  .primary-button:hover {
-    background: #002060;
-  }
-  
-  /* Disabled State */
-  .primary-button.disabled {
-    background: #A0A0A0;
-    cursor: not-allowed;
-  }
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 8px;
+  width: 343px;
+  max-width: 100%;
+  height: 52px;
+  background: var(--minilo-color-primary, #003078);
+  border: 1px solid var(--minilo-color-primary, #003078);
+  border-radius: var(--minilo-radius-sm, 4px);
+  cursor: pointer;
+  font-family: var(--minilo-font-family, 'Noto Sans', sans-serif);
+  font-style: normal;
+  font-weight: var(--minilo-font-weight-bold, 700);
+  font-size: var(--minilo-font-size-h4, 18px);
+  line-height: 24px;
+  color: var(--minilo-color-text-inverse, #ffffff);
+  text-align: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
 
-    /* Loading with Enabled State */
-    .primary-button.loading {
-      background: #003078;
-      cursor: progress;
-    }
+/* Hover State */
+.primary-button:hover {
+  background: var(--minilo-color-primary-strong, #002060);
+  border-color: var(--minilo-color-primary-strong, #002060);
+}
 
-   /* Loading with Disabled State */
-   .primary-button.loading-disabled {
-    background: #A0A0A0;
-    cursor: progress;
-  }
-  
+/* Disabled State */
+.primary-button.disabled {
+  background: #a0a0a0;
+  border-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+/* Loading with Enabled State */
+.primary-button.loading {
+  background: var(--minilo-color-primary, #003078);
+  border-color: var(--minilo-color-primary, #003078);
+  cursor: progress;
+}
+
+/* Loading with Disabled State */
+.primary-button.loading-disabled {
+  background: #a0a0a0;
+  border-color: #a0a0a0;
+  cursor: progress;
+}

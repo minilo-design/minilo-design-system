@@ -1,135 +1,182 @@
-'use client';
-
-import React from 'react';
-import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import heroImage from '../assets/hero-image.png';
+import SeoHead from '@/components/site/SeoHead';
+import { homeFeatureCards, systemStats, walkthroughSteps } from '@/data/site-content';
 
-const Home = () => {
+const HOME_DESCRIPTION =
+  'Minilo Design is a minimalistic and adaptive design system that empowers developers with flexible components for building modern UIs.';
+
+export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (ticking) {
+        return;
+      }
+
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        setScrollY(window.scrollY);
+        ticking = false;
+      });
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const heroShift = Math.min(scrollY * 0.18, 140);
+  const stepShiftBase = Math.min(scrollY * 0.05, 28);
+
   return (
     <>
-      <Head>
-        <title>Minilo Design</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#003078" />
-        <meta
-          name="description"
-          content="Minilo Design is a minimalistic and adaptive design system that empowers developers with flexible components for building modern UIs."
-        />
-        <meta
-          name="keywords"
-          content="design system, Minilo, UI components, web design, responsive design, modern UI, adaptive UI"
-        />
-        <meta name="author" content="Minilo Design" />
+      <SeoHead title="Minilo Design" description={HOME_DESCRIPTION} path="/" />
 
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/logo192.png" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/favicon/android-chrome-192x192.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="512x512"
-          href="/favicon/android-chrome-512x512.png"
-        />
-
-        <meta property="og:title" content="Minilo Design - A Modern Design System" />
-        <meta
-          property="og:description"
-          content="Minilo Design is a minimalistic and adaptive design system that empowers developers with flexible components for building modern UIs."
-        />
-        <meta property="og:image" content="/logo.png" />
-        <meta property="og:url" content="https://minilo.io" />
-        <meta property="og:type" content="website" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Minilo Design - A Modern Design System" />
-        <meta
-          name="twitter:description"
-          content="Minilo Design is a minimalistic and adaptive design system that empowers developers with flexible components for building modern UIs."
-        />
-        <meta name="twitter:image" content="/logo192.png" />
-
-        <link rel="manifest" href="/site.webmanifest" />
-      </Head>
-
-      <div className="bg-[#FDFCFF] text-gray-800">
-        {/* Hero Section */}
-        <section className="relative w-full h-[300px] md:h-[500px] rounded-xl overflow-hidden">
+      <section className="hero-section page-section" aria-label="Hero">
+        <div
+          className="hero-image-layer"
+          style={{ transform: `translate3d(0, ${heroShift}px, 0) scale(1.04)` }}
+        >
           <Image
             src={heroImage}
-            alt="Hero"
+            alt="Minilo design system hero"
             fill
-            className="object-cover"
             priority
+            sizes="100vw"
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center px-4 py-8">
-            <h1 className="text-white text-3xl md:text-5xl font-bold mb-4">
-              Build Beautiful UIs with Minilo
-            </h1>
-            <p className="text-white text-lg md:text-xl max-w-xl">
-              Fast, flexible, and modern design system for your applications.
+        </div>
+
+        <div className="hero-glass">
+          <div className="hero-content">
+            <span className="minilo-chip">Version 1.0 • Open Source</span>
+            <h1 className="hero-title">Build Beautiful UIs with Minilo</h1>
+            <p className="hero-text">
+              Fast, flexible, and modern design system for your applications. This walkthrough moves from
+              foundations to components to complete product screens.
             </p>
+
+            <div className="hero-actions">
+              <Link href="/doc" className="hero-cta minilo-button minilo-button-primary">
+                Read Docs
+              </Link>
+              <Link href="/components" className="hero-cta minilo-button minilo-button-secondary">
+                Explore Components
+              </Link>
+            </div>
+
+            <p className="hero-scroll-note">Scroll to follow the parallax walkthrough</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Features Section */}
-        <section className="py-16 px-6 md:px-12 max-w-7xl mx-auto">
-          <h2 className="text-3xl font-semibold text-[#003078] text-center mb-12">
-            Features of Minilo Design
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-  {[
-    {
-      src: "/assets/design-images/design-1.svg",
-      title: "Typography & Grid System",
-      desc: "A flexible typography and grid system that adapts to any layout design.",
-    },
-    {
-      src: "/assets/design-images/design-2.svg",
-      title: "Color Schemes & Themes",
-      desc: "Easily implement consistent color schemes and themes for a cohesive user experience.",
-    },
-    {
-      src: "/assets/design-images/design-3.svg",
-      title: "Components",
-      desc: "A wide range of reusable and customizable components to streamline your development process.",
-    },
-  ].map((item, i) => (
-    <div
-      key={i}
-      className="bg-white border border-[#E9E9E9] rounded-2xl overflow-hidden"
-    >
-      <div className="relative w-full h-[200px]">
-        <img
-          src={item.src}
-          alt={item.title}
-          className="w-full h-full object-cover"
-        />
-        {/* Fade Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/90 to-transparent" />
-      </div>
-      <div className="-mt-6 px-6 pb-6 relative z-10 bg-white">
-        <h3 className="text-xl font-semibold text-[#003078] mb-2">
-          {item.title}
-        </h3>
-        <p className="text-sm text-gray-600">{item.desc}</p>
-      </div>
-    </div>
-  ))}
-</div>
+      <section className="page-section" aria-label="System stats">
+        <div className="minilo-kicker">Design System Health</div>
+        <h2 className="page-title">A stable foundation for scale</h2>
+        <p className="page-copy">
+          Your original design principles remain intact and now drive a clearer implementation layer across
+          pages and Storybook.
+        </p>
 
+        <div className="stats-grid">
+          {systemStats.map((stat) => (
+            <article key={stat.label} className="stat-card">
+              <div className="stat-value">{stat.value}</div>
+              <div className="stat-label">{stat.label}</div>
+            </article>
+          ))}
+        </div>
+      </section>
 
+      <section className="walkthrough page-section" id="walkthrough" aria-label="Parallax walkthrough">
+        <div className="walkthrough-header">
+          <div className="minilo-kicker">Parallax Walkthrough</div>
+          <h2 className="page-title">See the system move from token to product</h2>
+          <p className="page-copy">
+            The walkthrough uses subtle parallax offsets while preserving readability, so users can track
+            where design rules become reusable UI patterns.
+          </p>
+        </div>
 
-        </section>
-      </div>
+        <div className="walkthrough-track">
+          {walkthroughSteps.map((step, index) => {
+            const direction = index % 2 === 0 ? 1 : -1;
+            const offset = direction * stepShiftBase * (index + 1) * 0.38;
+
+            return (
+              <article
+                key={step.title}
+                className="walkthrough-step"
+                style={{ transform: `translate3d(0, ${offset}px, 0)` }}
+              >
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+                <div className="walkthrough-callout">{step.callout}</div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="page-section" aria-label="Minilo features">
+        <div className="minilo-kicker">Features of Minilo Design</div>
+        <h2 className="page-title">Original strengths, now with stronger UX flow</h2>
+
+        <div className="features-grid">
+          {homeFeatureCards.map((item) => (
+            <article key={item.title} className="feature-card minilo-card">
+              <div className="feature-card-media">
+                <img src={item.src} alt={item.title} loading="lazy" />
+              </div>
+              <div className="feature-card-body">
+                <h3 className="feature-card-title">{item.title}</h3>
+                <p className="feature-card-desc">{item.desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="feature-list">
+          <div className="feature-list-item">Responsive breakpoints and spacing scales are consistently tokenized.</div>
+          <div className="feature-list-item">Storybook now exposes foundation-level documentation beyond component demos.</div>
+          <div className="feature-list-item">The website structure now follows clearer narrative hierarchy and call-to-action flow.</div>
+        </div>
+      </section>
+
+      <section className="cta-band page-section" aria-label="Call to action">
+        <h2>Build faster with one source of UI truth.</h2>
+        <p>
+          Use docs for implementation, use components for execution, and use Storybook to validate behavior
+          before product release.
+        </p>
+        <div className="hero-actions">
+          <a
+            href="https://storybook.minilo.io/?path=/docs/documentation--docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-cta minilo-button minilo-button-secondary"
+          >
+            Open Storybook
+          </a>
+          <a
+            href="https://github.com/minilo-design/minilo-design-system"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-cta minilo-button minilo-button-primary"
+          >
+            View Source Code
+          </a>
+        </div>
+      </section>
     </>
   );
-};
-
-export default Home;
+}
