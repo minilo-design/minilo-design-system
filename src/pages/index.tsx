@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import heroImage from '../assets/hero-image.png';
 import SeoHead from '@/components/site/SeoHead';
-import { homeFeatureCards, systemStats, walkthroughSteps } from '@/data/site-content';
+import { FIGMA_URL, homeFeatureCards, systemStats, walkthroughSteps } from '@/data/site-content';
 
 const HOME_DESCRIPTION =
   'Minilo Design is a minimalistic and adaptive design system that empowers developers with flexible components for building modern UIs.';
@@ -72,6 +72,9 @@ export default function Home() {
               <Link href="/components" className="hero-cta minilo-button minilo-button-secondary">
                 Explore Components
               </Link>
+              <a href={FIGMA_URL} className="hero-cta minilo-button minilo-button-secondary" target="_blank" rel="noopener noreferrer">
+                Open Figma
+              </a>
             </div>
 
             <p className="hero-scroll-note">Scroll to follow the parallax walkthrough</p>
@@ -159,6 +162,9 @@ export default function Home() {
           before product release.
         </p>
         <div className="hero-actions">
+          <a href={FIGMA_URL} target="_blank" rel="noopener noreferrer" className="hero-cta minilo-button minilo-button-secondary">
+            Open Figma
+          </a>
           <a
             href="https://storybook.minilo.io/?path=/docs/documentation--docs"
             target="_blank"

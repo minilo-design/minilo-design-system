@@ -1,5 +1,5 @@
 import SeoHead from '@/components/site/SeoHead';
-import { componentCategories } from '@/data/site-content';
+import { componentCategories, FIGMA_URL } from '@/data/site-content';
 
 const COMPONENTS_DESCRIPTION =
   'Explore Minilo component categories, implementation coverage, and direct links to Figma and source code.';
@@ -19,7 +19,7 @@ export default function ComponentsPage() {
 
         <div className="resource-links">
           <a
-            href="https://www.figma.com/design/eOMBuOepZXFo3g4LclkXlO/Minilo-Design-System?node-id=0-1&t=Ii49jLCi4V2j8jM6-1"
+            href={FIGMA_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="resource-link"

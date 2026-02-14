@@ -2,6 +2,7 @@ import '@styles/globals.css';
 import type { AppProps } from 'next/app';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { FIGMA_URL } from '@/data/site-content';
 
 const SITE_LINKS = [
   { href: '/', label: 'Home' },
@@ -45,6 +46,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               rel="noopener noreferrer"
             >
               Storybook
+            </a>
+            <a href={FIGMA_URL} className="site-nav-link" target="_blank" rel="noopener noreferrer">
+              Figma
             </a>
           </nav>
         </div>

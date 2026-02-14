@@ -10,6 +10,9 @@ export type WalkthroughStep = {
   callout: string;
 };
 
+export const FIGMA_URL =
+  'https://www.figma.com/design/eOMBuOepZXFo3g4LclkXlO/Minilo-Design-System?t=g3HuGfC49LP9iXH1-1';
+
 export const homeFeatureCards: FeatureCard[] = [
   {
     src: '/assets/design-images/design-1.svg',
